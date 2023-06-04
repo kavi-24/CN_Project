@@ -38,8 +38,7 @@ def is_connected():
     except OSError:
         pass
     return False
-
-
+#->api refers to any software with distinct function
 def api(movie_name: str): # -> str of html
     if is_connected():
         try:
