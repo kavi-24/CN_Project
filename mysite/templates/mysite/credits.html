@@ -1,0 +1,65 @@
+<!--
+    design a credits page for 3 persons
+    1. me
+    2. my friend
+    3. my friend's friend
+    have space for details
+    and space for picture (circle shaped)
+-->
+
+{% extends 'mysite/base.html' %} {% block title %} Credits {% endblock %} 
+{% block content %}
+<div class="container" style="padding: 5%">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://avatars0.githubusercontent.com/u/43115530?s=460&v=4"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <center>
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">Details</p>
+            <a href="" class="btn btn-primary">Button</a>
+          </center>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://avatars0.githubusercontent.com/u/43115530?s=460&v=4"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <center>
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">Details</p>
+            <a href="" class="btn btn-primary">Button</a>
+          </center>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://avatars0.githubusercontent.com/u/43115530?s=460&v=4"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <center>
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">Details</p>
+            <a href="" class="btn btn-primary">Button</a>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'mysite/base.html' %} {% block title %} Result {% endblock %} 
+{% block content %}
+
+{% if sent == True %}
+<div class="alert alert-success" role="alert">
+  Email Sent Successfully
+</div>
+{% elif sent == False %}
+<div class="alert alert-danger" role="alert">
+  Email Sending Failed
+</div>
+{% endif %}
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .card-content {
+    flex: 1;
+  }
+
+  .details {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .expanded {
+    display: block;
+    border: black;
+    border-style: solid;
+    margin-left: 10px;
+    padding: 3%;
+  }
+
+  .poster {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+  }
+
+  .button-container {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .button {
+    padding: 8px 12px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+</style>
+<script>
+  function expandDetails() {
+    var details = document.getElementById("movieDetails");
+    details.classList.toggle("expanded");
+    // change button text
+    var button = document.getElementsByClassName("button")[0];
+    if (button.innerHTML === "Show Details") {
+      button.innerHTML = "Hide Details";
+    } else {
+      button.innerHTML = "Show Details";
+    }
+  }
+</script>
+
+<div class="card">
+  <div class="card-content">
+    <h2>{{ title }}</h2>
+    <p>Year: {{ year }}</p>
+    <p>Rated: {{ rated }}</p>
+    <p>Released Date: {{ released_date }}</p>
+    <p>Runtime: {{ runtime }}</p>
+    <p>Genre: {{ genre }}</p>
+    <p>Writer: {{ writer }}</p>
+    <p>Actors: {{ actors }}</p>
+    <div class="button-container">
+      <button class="button" onclick="expandDetails()">Show Details</button>
+    </div>
+  </div>
+  <div id="movieDetails" class="details">
+    <p>Plot: {{ plot }}</p>
+    <p>Language: {{ language }}</p>
+    <p>Country: {{ country }}</p>
+    <p>Awards: {{ awards }}</p>
+    <img class="poster" src="{{ poster }}" alt="Movie Poster" />
+    <p>Ratings:</p>
+    <ul>
+      {% for rating in ratings %}
+      <li>{{ rating.Source }}: {{ rating.Value }}</li>
+      {% endfor %}
+    </ul>
+    <p>Metascore: {{ metascore }}</p>
+    <p>IMDb Rating: {{ imdbRating }}</p>
+    <p>IMDb Votes: {{ imdbVotes }}</p>
+    <p>IMDb ID: {{ imdbID }}</p>
+    <p>Type: {{ type }}</p>
+    <p>DVD: {{ dvd }}</p>
+    <p>Box Office: {{ boxOffice }}</p>
+    <p>Production: {{ production }}</p>
+    <p>Website: {{ website }}</p>
+    <!-- <p>Response: {{ response }}</p> -->
+  </div>
+</div>
+
+{% endblock %}
