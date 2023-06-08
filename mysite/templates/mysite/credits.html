@@ -1,65 +1,116 @@
+{% extends 'mysite/base.html' %} {% block title %} Credits {% endblock %} 
+{% block content %}
+
 <!--
     design a credits page for 3 persons
     1. me
     2. my friend
     3. my friend's friend
+
     have space for details
     and space for picture (circle shaped)
+
+    align them such that one is on top center
+    and the other two are on the left and right bottom corners
 -->
 
-{% extends 'mysite/base.html' %} {% block title %} Credits {% endblock %} 
-{% block content %}
-<div class="container" style="padding: 5%">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem">
+<div class="container">
+  <div class="col-sm">
+    <center>
+      <div class="card top row">
         <img
-          src="https://avatars0.githubusercontent.com/u/43115530?s=460&v=4"
-          class="card-img-top"
-          alt="..."
+          src="https://avatars.githubusercontent.com/u/128985351?s=64&v=4"
+          alt="Person 1"
+          class="circle"
         />
-        <div class="card-body">
-          <center>
-            <h5 class="card-title">Name</h5>
-            <p class="card-text">Details</p>
-            <a href="" class="btn btn-primary">Button</a>
-          </center>
-        </div>
+        <h3>Raksha Madhogaria</h3>
+        <h4>21BLC1564</h4>
+        <p>_______________</p>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem">
+    </center>
+    <div class="row">
+      <div class="card left col-sm">
         <img
-          src="https://avatars0.githubusercontent.com/u/43115530?s=460&v=4"
-          class="card-img-top"
-          alt="..."
+          src="https://avatars.githubusercontent.com/u/132841222?s=64&v=4"
+          alt="Person 2"
+          class="circle"
         />
-        <div class="card-body">
-          <center>
-            <h5 class="card-title">Name</h5>
-            <p class="card-text">Details</p>
-            <a href="" class="btn btn-primary">Button</a>
-          </center>
-        </div>
+        <h3>Darshni B</h3>
+        <h4>21BLC1603</h4>
+        <p>_______________</p>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem">
+      <div class="card right col-sm">
         <img
-          src="https://avatars0.githubusercontent.com/u/43115530?s=460&v=4"
-          class="card-img-top"
-          alt="..."
+          src="https://avatars.githubusercontent.com/u/95529432?s=40&v=4"
+          alt="Person 3"
+          class="circle"
         />
-        <div class="card-body">
-          <center>
-            <h5 class="card-title">Name</h5>
-            <p class="card-text">Details</p>
-            <a href="" class="btn btn-primary">Button</a>
-          </center>
-        </div>
+        <h3>Sri Kavipriyan M A</h3>
+        <h4>21BLC1642</h4>
+        <p>_______________</p>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    align-items: center;
+    padding: 5%;
+    margin: 20px;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+  }
+
+  .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  h3 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+  }
+
+  .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .top {
+    align-self: center;
+    /*set width as 50% of inherited*/
+    width: 50%;
+  }
+
+  .left {
+    align-self: flex-end;
+  }
+
+  .right {
+    align-self: flex-end;
+  }
+</style>
 
 {% endblock %}

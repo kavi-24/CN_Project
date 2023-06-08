@@ -16,18 +16,42 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/components/navbar/">
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/components/navbar/"
+    />
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      footer {
+        margin-top: auto;
+      }
+    </style>
     <title>{% block title %} {% endblock %}</title>
   </head>
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-left: 5%; padding-right: 10%;">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark"
+      style="padding-left: 5%; padding-right: 10%"
+    >
       <a class="navbar-brand" href="../">Email Sending Bot</a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -36,8 +60,9 @@
           <li class="nav-item">
             <a class="nav-link" href="credits">Credits</a>
           </li>
+        </ul>
       </div>
-    </nav>
+    </nav>`
 
     {% block content %} {% endblock %}
 
@@ -49,4 +74,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/@stackblitz/sdk@1/bundles/sdk.umd.js"></script>
   </body>
+
+  <footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2023 Copyright:
+      <a class="text-dark" href="#">RDS (Computer Networks)</a>
+    </div>
+  </footer>
 </html>
